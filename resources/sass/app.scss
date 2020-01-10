@@ -1,13 +1,18 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~font-awesome/scss/font-awesome";
+
 
 // Variables
 @import 'variables';
-$fa-font-path: "../webfonts";
+$fa-font-path: "../fonts/" !default;
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~admin-lte/dist/css/AdminLTE.min.css';
+@import '~admin-lte/dist/css/skins/_all-skins.css';
+/* fix top nav */
+.navbar {
+     padding: unset;
+}
+/* fix top nav */
