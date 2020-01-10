@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tasks=[];
+        $tasks=Task::all();
         return view('home',['tasks'=>$tasks]);
     }
 }
