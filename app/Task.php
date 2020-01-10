@@ -2,11 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Builder;
+use App\Traits\Multitenantable;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    use Multitenantable;
     protected $fillable = [
         'description',
         'status',
@@ -21,12 +22,6 @@ class Task extends Model
     public static function boot()
     {
         parent::boot();
-        static::addGlobalScope("hotel_created_user", function (Builder $builder) {
-            if(auth()->check())
-            {
-                return $builder->where("user_id", auth()->id());
 
-            }
-        });
     }
 }
